@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
         
         <style>
         
@@ -43,8 +43,8 @@
 		<p>RECOMMENDED <span id="recc" style="border:0; color:#f6931f; font-weight:bold;"></span></p>
 		<p>MAXIMUM <span id="max" style="border:0; color:#f6931f; font-weight:bold;"></span></p>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
         
         <script>
         
@@ -55,10 +55,11 @@
 		       
 		    //age range function
 		    $("#ageRangeSlider").slider({
+		      range: "min",
 		      value: 0,
 		      min: 0,
 		      max: 66,
-		      step: 10,
+		      step: 11,
 		      slide: function(event, ui) {
 		        $("#yourAgeRange").val(ui.value);
 		        foo = $("#yourAgeRange").val();
@@ -69,6 +70,7 @@
 		    
 		    //policy amount function
 		    $("#policySlider").slider({
+		      range: "min",
 		      value: 0,
 		      min: 0,
 		      max: 1000000,
@@ -81,13 +83,14 @@
 		    });
 		    $("#amount").val($("#policySlider").slider("value"));
 		
-		$("#ageRangeSlider , #policySlider").on('mousemove keyup keypress blur change' , function() {
+		$("#ageRangeSlider , #policySlider").on('blur click mousemove keypress keyup' , function() {
 		  var total = +foo + +bar;
 		  console.log( "Handler for .change() called for age range slider" + foo);
 		  console.log( "Handler for .change() called for policy range slider" + bar);
 		  console.log( "Lets add foo and bar" + total)
 		  
-		  if(foo == 10){
+		  if(foo == 11){ // This is for the 20-30 range
+		  	  $("#yourAgeRange").val('20-30');
 		      var recc = bar * 15;
 		      var max = bar * 20;
 		      $('#recc').html(recc);
@@ -95,7 +98,8 @@
 		      console.log('recommended' + recc);
 		      console.log('maximum' + max);
 		  }
-		  if(foo == 20){
+		  if(foo == 22){ // This is for the 31-40 range
+		      $("#yourAgeRange").val('31-40');
 		      var recc = bar * 15;
 		      var max = bar * 20;
 		      $('#recc').html(recc);
@@ -103,15 +107,8 @@
 		      console.log('recommended' + recc);
 		      console.log('maximum' + max);
 		  }
-		  if(foo == 30){
-		      var recc = bar * 15;
-		      var max = bar * 20;
-		      $('#recc').html(recc);
-		      $('#max').html(max);
-		      console.log('recommended' + recc);
-		      console.log('maximum' + max);
-		  }
-		  if(foo == 40){
+		  if(foo == 33){ // This is for the 41-50 range
+		      $("#yourAgeRange").val('41-50');
 		      var recc = bar * 10;
 		      var max = bar * 15;
 		      $('#recc').html(recc);
@@ -119,15 +116,8 @@
 		      console.log('recommended' + recc);
 		      console.log('maximum' + max);
 		  }
-		  if(foo == 50){
-		      var recc = bar * 10;
-		      var max = bar * 15;
-		      $('#recc').html(recc);
-		      $('#max').html(max);
-		      console.log('recommended' + recc);
-		      console.log('maximum' + max);
-		  }
-		  if(foo == 60){
+		  if(foo == 44){ // This is for the 51-60 range
+		      $("#yourAgeRange").val('51-60');
 		      var recc = bar * 7;
 		      var max = bar * 10;
 		      $('#recc').html(recc);
@@ -135,9 +125,19 @@
 		      console.log('recommended' + recc);
 		      console.log('maximum' + max);
 		  }
-		  if(foo == 70){
+		  if(foo == 55){ // This is for the 61-65 range
+		      $("#yourAgeRange").val('61-65');
 		      var recc = bar * 5;
 		      var max = bar * 7;
+		      $('#recc').html(recc);
+		      $('#max').html(max);
+		      console.log('recommended' + recc);
+		      console.log('maximum' + max);
+		  }
+		  if(foo == 66){ // This is for the 66+ range
+		      $("#yourAgeRange").val('66+');
+		      var recc = bar * 3;
+		      var max = bar * 5;
 		      $('#recc').html(recc);
 		      $('#max').html(max);
 		      console.log('recommended' + recc);
