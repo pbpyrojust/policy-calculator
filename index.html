@@ -13,12 +13,13 @@
         <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
         
         <style>
+        .policyCalculator h1 { 
+        	text-align: center;
+        	text-transform: uppercase;
+        }
         
-        body {
-	        margin: 0;
-	        padding: 0;
-	        font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
-			font-size: 14px;
+        .policyCalculator h2 { 
+        	text-align: center;   
         }
         
         .ageRangeOutputs, .amountRangeOutputs {
@@ -40,6 +41,12 @@
         <![endif]-->
         
         <div class="policyCalculator">
+        
+        	<h1>Rule of thumb calculator</h1>
+        	<span class="separator small center"></span>
+        	
+        	<h2>Use this calculator to discover the right amount of insurance for you.</h2>
+        
 	        <p class="ageRangeOutputs">
 				<input type="text" id="yourAgeRange"> <br />
 				<label for="yourAgeRange">Your age range:</label>
