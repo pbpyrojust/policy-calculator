@@ -21,6 +21,15 @@
 			font-size: 14px;
         }
         
+        .ageRangeOutputs, .amountRangeOutputs {
+	        text-align: center;
+        }
+        
+        .ageRangeOutputs input, .amountRangeOutputs input { 
+        	width: 38px;
+        	border: 0; 
+        }
+        
         </style>
         
     </head>
@@ -29,19 +38,21 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <p>
-			<label for="yourAgeRange">Your age range:</label>
-			<input type="text" id="yourAgeRange" style="border:0; color:#f6931f; font-weight:bold;">
-		</p>
-			<div id="ageRangeSlider"></div>
-		<p>
-			<label for="amount">Policy amount:</label>
-			<input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
-		</p>
-			<div id="policySlider"></div>
-
-		<p>RECOMMENDED <span id="recc" style="border:0; color:#f6931f; font-weight:bold;"></span></p>
-		<p>MAXIMUM <span id="max" style="border:0; color:#f6931f; font-weight:bold;"></span></p>
+        <div class="policyCalculator">
+	        <p class="ageRangeOutputs">
+				<label for="yourAgeRange">Your age range:</label> <br />
+				<input type="text" id="yourAgeRange">
+			</p>
+				<div id="ageRangeSlider"></div>
+			<p class="amountRangeOutputs">
+				<label for="amount">Policy amount:</label> <br />
+				<input type="text" id="amount">
+			</p>
+				<div id="policySlider"></div>
+	
+			<p class="amountOutputs">RECOMMENDED <span id="recc"></span></p>
+			<p class="amountOutputs">MAXIMUM <span id="max"></span></p>
+        </div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
@@ -53,7 +64,7 @@
 		    var foo = " ";
 		    var bar = " ";
 		       
-		    //age range function
+		    // Age range function
 		    $("#ageRangeSlider").slider({
 		      range: "min",
 		      value: 0,
@@ -68,7 +79,7 @@
 		    });
 		    $("#yourAgeRange").val($("#ageRangeSlider").slider("value"));
 		    
-		    //policy amount function
+		    // Policy amount function
 		    $("#policySlider").slider({
 		      range: "min",
 		      value: 0,
