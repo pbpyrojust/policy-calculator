@@ -30,9 +30,6 @@
         	border: 0; 
         }
         
-        .reccOutputs { float: left; }
-        
-        .maxOutputs { float: right; }
         
         </style>
         
@@ -99,7 +96,7 @@
 		    });
 		    $j("#amount").val($j("#policySlider").slider("value"));
 		
-		$j("#ageRangeSlider , #policySlider").on('blur click mousemove keypress keyup' , function() {
+		$j("#ageRangeSlider , #policySlider").on('blur click mousemove mouseup mousedown keypress keyup' , function() {
 		  var total = +foo + +bar;
 		  console.log( "Handler for .change() called for age range slider" + foo);
 		  console.log( "Handler for .change() called for policy range slider" + bar);
