@@ -9,19 +9,147 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+        
+        <style>
+        
+        body {
+	        margin: 0;
+	        padding: 0;
+	        font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+			font-size: 14px;
+        }
+        
+        </style>
+        
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        
+        <p>
+			<label for="yourAgeRange">Your age range:</label>
+			<input type="text" id="yourAgeRange" style="border:0; color:#f6931f; font-weight:bold;">
+		</p>
+			<div id="ageRangeSlider"></div>
+		<p>
+			<label for="amount">Policy amount:</label>
+			<input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
+		</p>
+			<div id="policySlider"></div>
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+		<p>RECOMMENDED <span id="recc" style="border:0; color:#f6931f; font-weight:bold;"></span></p>
+		<p>MAXIMUM <span id="max" style="border:0; color:#f6931f; font-weight:bold;"></span></p>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        
+        <script>
+        
+		$(function() {    
+		    
+		    var foo = " ";
+		    var bar = " ";
+		       
+		    //age range function
+		    $("#ageRangeSlider").slider({
+		      value: 0,
+		      min: 0,
+		      max: 66,
+		      step: 10,
+		      slide: function(event, ui) {
+		        $("#yourAgeRange").val(ui.value);
+		        foo = $("#yourAgeRange").val();
+		        console.log('age range' + foo);
+		      }
+		    });
+		    $("#yourAgeRange").val($("#ageRangeSlider").slider("value"));
+		    
+		    //policy amount function
+		    $("#policySlider").slider({
+		      value: 0,
+		      min: 0,
+		      max: 1000000,
+		      step: 50000,
+		      slide: function(event, ui) {
+		        $("#amount").val(ui.value);
+		        bar = $("#amount").val();
+		        console.log('amount'+ bar)
+		      }
+		    });
+		    $("#amount").val($("#policySlider").slider("value"));
+		
+		$("#ageRangeSlider , #policySlider").on('mousemove keyup keypress blur change' , function() {
+		  var total = +foo + +bar;
+		  console.log( "Handler for .change() called for age range slider" + foo);
+		  console.log( "Handler for .change() called for policy range slider" + bar);
+		  console.log( "Lets add foo and bar" + total)
+		  
+		  if(foo == 10){
+		      var recc = bar * 15;
+		      var max = bar * 20;
+		      $('#recc').html(recc);
+		      $('#max').html(max);
+		      console.log('recommended' + recc);
+		      console.log('maximum' + max);
+		  }
+		  if(foo == 20){
+		      var recc = bar * 15;
+		      var max = bar * 20;
+		      $('#recc').html(recc);
+		      $('#max').html(max);
+		      console.log('recommended' + recc);
+		      console.log('maximum' + max);
+		  }
+		  if(foo == 30){
+		      var recc = bar * 15;
+		      var max = bar * 20;
+		      $('#recc').html(recc);
+		      $('#max').html(max);
+		      console.log('recommended' + recc);
+		      console.log('maximum' + max);
+		  }
+		  if(foo == 40){
+		      var recc = bar * 10;
+		      var max = bar * 15;
+		      $('#recc').html(recc);
+		      $('#max').html(max);
+		      console.log('recommended' + recc);
+		      console.log('maximum' + max);
+		  }
+		  if(foo == 50){
+		      var recc = bar * 10;
+		      var max = bar * 15;
+		      $('#recc').html(recc);
+		      $('#max').html(max);
+		      console.log('recommended' + recc);
+		      console.log('maximum' + max);
+		  }
+		  if(foo == 60){
+		      var recc = bar * 7;
+		      var max = bar * 10;
+		      $('#recc').html(recc);
+		      $('#max').html(max);
+		      console.log('recommended' + recc);
+		      console.log('maximum' + max);
+		  }
+		  if(foo == 70){
+		      var recc = bar * 5;
+		      var max = bar * 7;
+		      $('#recc').html(recc);
+		      $('#max').html(max);
+		      console.log('recommended' + recc);
+		      console.log('maximum' + max);
+		  }
+		    
+		});
+		    
+		    
+		});
+        
+        </script>
 
     </body>
 </html>
