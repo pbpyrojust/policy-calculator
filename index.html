@@ -92,7 +92,35 @@
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 	text-transform: uppercase;
-}  
+}
+.grid2cola { width: 100%; }
+.grid2cola .column { width: 50%; display: block; }
+.grid2cola .column:first-of-type { float: left; }
+.grid2cola .column:last-of-type { float: right; }
+.reccOutput { float: left; }
+.maxOutput { float: right; }
+.reccOutput, .maxOutput {
+	padding-top: 12px;
+	padding-right: 20px;
+	padding-bottom: 12px;
+	padding-left: 20px;
+	color: #7f7f7f;
+	font-size: 16pt;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	text-align: center;
+	border: 1px solid #d2d2d2;
+}
+.maxOutpu {
+	padding-right: 39px;
+	padding-left: 39px;
+}
+.reccOutput span, .maxOutput span {
+	color: #e29435;
+	font-size: 24pt;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+} 
 </style>
         
     </head>
@@ -110,19 +138,25 @@
         
 	        <p class="ageRangeOutputs">
 				<input type="hidden" id="yourAgeRange"> <br />
-				<span id="ageRange"></span> <br />
+				<span id="ageRange">20-30</span> <br />
 				<label for="yourAgeRange">Age range</label>
 			</p>
 				<div id="ageRangeSlider"></div>
 			<p class="amountRangeOutputs">
 				<input type="hidden" id="amount"> <br />
-				<span id="policyAmount"></span> <br />
+				<span id="policyAmount">$100,000</span> <br />
 				<label for="amount">Avg. yearly income</label>
 			</p>
 				<div id="policySlider"></div>
-	
-			<p class="reccOutput">RECOMMENDED <span id="recc"></span></p>
-			<p class="maxOutput">MAXIMUM <span id="max"></span></p>
+				
+			<div class="grid2cola">
+				<div class="column">
+					<p class="reccOutput">Reccomended Policy Amount<br /> <span id="recc">$1,500,000</span></p>
+				</div>
+				<div class="column">
+					<p class="maxOutput">Maximum Available<br /> <span id="max">$2,000,000</span></p>
+				</div>
+			</div>
         </div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -142,14 +176,14 @@
 			cssNode.media = 'screen';
 			headID.appendChild(cssNode);  
 		    
-		    var foo = " ";
-		    var bar = " ";
+		    var foo = 11;
+		    var bar = 100000;
 		       
 		    // Age range function
 		    $j("#ageRangeSlider").slider({
 		      range: "min",
-		      value: 0,
-		      min: 0,
+		      value: 11,
+		      min: 11,
 		      max: 66,
 		      step: 11,
 		      slide: function(event, ui) {
@@ -176,7 +210,7 @@
 		    });
 		    $j("#amount").val($j("#policySlider").slider("value"));
 		
-		$j("#ageRangeSlider , #policySlider").on('blur click mousemove mouseup mousedown keypress keyup' , function() {
+		$j("body , .policyCalculator , #ageRangeSlider , #policySlider").on('load focus blur click mousemove mouseup mousedown keypress keyup' , function() {
 		  var total = +foo + +bar;
 		  console.log( "Handler for .change() called for age range slider" + foo);
 		  console.log( "Handler for .change() called for policy range slider" + bar);
