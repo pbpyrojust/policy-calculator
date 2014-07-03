@@ -149,17 +149,17 @@
 				<div id="ageRangeSlider"></div>
 			<p class="amountRangeOutputs">
 				<input type="hidden" id="amount"> <br />
-				<span id="policyAmount">$100,000</span> <br />
+				<span id="policyAmount" class="points">100000</span> <br />
 				<label for="amount">Avg. yearly income</label>
 			</p>
 				<div id="policySlider"></div>
 				
 			<div class="grid2cola">
 				<div class="column">
-					<div class="reccOutput">Reccomended Policy Amount<br /> <p id="recc">$1,500,000</p></div>
+					<div class="reccOutput">Reccomended Policy Amount<br /> <p id="recc" class="points">1500000</p></div>
 				</div>
 				<div class="column">
-					<div class="maxOutput">Maximum Available<br /> <p id="max">$2,000,000</p></div>
+					<div class="maxOutput">Maximum Available<br /> <p id="max" class="points">2000000</p></div>
 				</div>
 			</div>
         </div>
@@ -179,7 +179,8 @@
 			cssNode.rel = 'stylesheet';
 			cssNode.href = '/css/styles.css';
 			cssNode.media = 'screen';
-			headID.appendChild(cssNode);  
+			headID.appendChild(cssNode);
+  
 		    
 		    var foo = 11;
 		    var bar = 100000;
@@ -211,11 +212,23 @@
 		        bar = $j("#amount").val();
 		        console.log('amount'+ bar);
 		        $j("#policyAmount").html(bar);
+		        $j(".points").digits();
 		      }
 		    });
 		    $j("#amount").val($j("#policySlider").slider("value"));
-		
+		    
+		    // lets create a comma adding plugin
+		    $j.fn.digits = function(){ 
+				return this.each(function(){ 
+					$j(this).text( $j(this).text().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",") ); 
+					})
+			}
+			$j(".points").digits();
+
+    		    		
 		$j("body , .policyCalculator , #ageRangeSlider , #policySlider").on('load focus blur click mousemove mouseup mousedown keypress keyup' , function() {
+			
+			
 		  var total = +foo + +bar;
 		  console.log( "Handler for .change() called for age range slider" + foo);
 		  console.log( "Handler for .change() called for policy range slider" + bar);
@@ -227,6 +240,7 @@
 		      var max = bar * 20;
 		      $j('#recc').html(recc);
 		      $j('#max').html(max);
+		      $j(".points").digits();
 		      console.log('recommended' + recc);
 		      console.log('maximum' + max);
 		  }
@@ -277,9 +291,8 @@
 		  }
 		    
 		});
-		    
-		    
-		});
+		
+		});		
         
         </script>
 
