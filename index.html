@@ -171,6 +171,10 @@
         var $j = jQuery.noConflict();
         
 		$j(function() {
+		
+		$j("#policyAmount").prepend('$');
+		$j('#recc').prepend('$');
+		$j('#max').prepend('$');
 			
 			// Adds CSS file to the head
 			var headID = document.getElementsByTagName("head")[0];         
