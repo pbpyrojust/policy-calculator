@@ -79,8 +79,21 @@
     -moz-box-shadow:    inset 0 3px 7px -3px #000;
 	-webkit-box-shadow: inset 0 3px 7px -3px #000;
 	box-shadow:         inset 0 3px 7px -3px #000;
+} 
+.policyCalculator span {
+	color: #e29435;
+	font-size: 30px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+.policyCalculator label {
+	color: #808080;
+	font-size: 12pt;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
 }  
-        </style>
+</style>
         
     </head>
     <body>
@@ -96,13 +109,15 @@
         	<h2>Use this calculator to discover the right amount of insurance for you.</h2>
         
 	        <p class="ageRangeOutputs">
-				<input type="text" id="yourAgeRange"> <br />
-				<label for="yourAgeRange">Your age range:</label>
+				<input type="hidden" id="yourAgeRange"> <br />
+				<span id="ageRange"></span> <br />
+				<label for="yourAgeRange">Age range</label>
 			</p>
 				<div id="ageRangeSlider"></div>
 			<p class="amountRangeOutputs">
-				<input type="text" id="amount"> <br />
-				<label for="amount">Policy amount:</label>
+				<input type="hidden" id="amount"> <br />
+				<span id="policyAmount"></span> <br />
+				<label for="amount">Avg. yearly income</label>
 			</p>
 				<div id="policySlider"></div>
 	
@@ -148,14 +163,15 @@
 		    // Policy amount function
 		    $j("#policySlider").slider({
 		      range: "min",
-		      value: 0,
-		      min: 0,
-		      max: 1000000,
+		      value: 100000,
+		      min: 100000,
+		      max: 3000000,
 		      step: 50000,
 		      slide: function(event, ui) {
 		        $j("#amount").val(ui.value);
 		        bar = $j("#amount").val();
-		        console.log('amount'+ bar)
+		        console.log('amount'+ bar);
+		        $j("#policyAmount").html(bar);
 		      }
 		    });
 		    $j("#amount").val($j("#policySlider").slider("value"));
@@ -167,7 +183,7 @@
 		  console.log( "Lets add foo and bar" + total)
 		  
 		  if(foo == 11){ // This is for the 20-30 range
-		  	  $j("#yourAgeRange").val('20-30');
+		  	  $j("#ageRange").html('20-30');
 		      var recc = bar * 15;
 		      var max = bar * 20;
 		      $j('#recc').html(recc);
@@ -176,7 +192,7 @@
 		      console.log('maximum' + max);
 		  }
 		  if(foo == 22){ // This is for the 31-40 range
-		      $j("#yourAgeRange").val('31-40');
+		      $j("#ageRange").html('31-40');
 		      var recc = bar * 15;
 		      var max = bar * 20;
 		      $j('#recc').html(recc);
@@ -185,7 +201,7 @@
 		      console.log('maximum' + max);
 		  }
 		  if(foo == 33){ // This is for the 41-50 range
-		      $j("#yourAgeRange").val('41-50');
+		      $j("#ageRange").html('41-50');
 		      var recc = bar * 10;
 		      var max = bar * 15;
 		      $j('#recc').html(recc);
@@ -194,7 +210,7 @@
 		      console.log('maximum' + max);
 		  }
 		  if(foo == 44){ // This is for the 51-60 range
-		      $j("#yourAgeRange").val('51-60');
+		      $j("#ageRange").html('51-60');
 		      var recc = bar * 7;
 		      var max = bar * 10;
 		      $j('#recc').html(recc);
@@ -203,7 +219,7 @@
 		      console.log('maximum' + max);
 		  }
 		  if(foo == 55){ // This is for the 61-65 range
-		      $j("#yourAgeRange").val('61-65');
+		      $j("#ageRange").html('61-65');
 		      var recc = bar * 5;
 		      var max = bar * 7;
 		      $j('#recc').html(recc);
@@ -212,7 +228,7 @@
 		      console.log('maximum' + max);
 		  }
 		  if(foo == 66){ // This is for the 66+ range
-		      $j("#yourAgeRange").val('66+');
+		      $j("#ageRange").html('66+');
 		      var recc = bar * 3;
 		      var max = bar * 5;
 		      $j('#recc').html(recc);
