@@ -211,7 +211,6 @@
 		        $j("#amount").val(ui.value);
 		        bar = $j("#amount").val();
 		        console.log('amount'+ bar);
-		        $j("#policyAmount").html(bar);
 		        $j(".points").digits();
 		      }
 		    });
@@ -227,7 +226,7 @@
 
     		    		
 		$j("body , .policyCalculator , #ageRangeSlider , #policySlider").on('load focus blur click mousemove mouseup mousedown keypress keyup' , function() {
-			
+			$j("#policyAmount").html(bar).prepend('$');
 			
 		  var total = +foo + +bar;
 		  console.log( "Handler for .change() called for age range slider" + foo);
@@ -238,8 +237,8 @@
 		  	  $j("#ageRange").html('20-30');
 		      var recc = bar * 15;
 		      var max = bar * 20;
-		      $j('#recc').html(recc);
-		      $j('#max').html(max);
+		      $j('#recc').html(recc).prepend('$');
+		      $j('#max').html(max).prepend('$');
 		      $j(".points").digits();
 		      console.log('recommended' + recc);
 		      console.log('maximum' + max);
