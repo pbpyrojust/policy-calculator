@@ -1,15 +1,28 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+<?php
+/*
+Plugin Name: AW Policy Calculator Form
+Plugin URI: http://anthroware.com
+Description: A simple policy calculator for simple needs. Usage: <code>[aw_calculator]</code>
+Version: 1.0
+Author: Justin Adams
+Author URI: http://justwhat.net
+*/
+
+function aw_policy_calculator() {
+echo '<script>'
+echo 'var headID = document.getElementsByTagName("head")[0]';         
+echo 'var cssNode = document.createElement("link")';
+echo 'cssNode.type = "text/css"';
+echo 'cssNode.rel = "stylesheet"';
+echo 'cssNode.href = "FireFox.css"';
+echo 'cssNode.media = "screen"';
+echo 'headID.appendChild(cssNode)';
+echo '</script>'
+ 
+}
+add_shortcode( 'aw_calculator', 'aw_policy_calculator' );
+
+?>        
         <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
         
         <style>
@@ -31,13 +44,7 @@
         	border: 0; 
         }
         
-        .ui-widget-header {
-	        background: #e29435 url() top left no-repeat;
-        }
         
-        .ui-state-default, .ui-state-active {
-	        	-webkit-border-radius: 12px;
-        }        
         </style>
         
     </head>
@@ -74,16 +81,7 @@
         <script>
         var $j = jQuery.noConflict();
         
-		$j(function() {
-			
-			// Adds CSS file to the head
-			var headID = document.getElementsByTagName("head")[0];         
-			var cssNode = document.createElement('link');
-			cssNode.type = 'text/css';
-			cssNode.rel = 'stylesheet';
-			cssNode.href = '/css/styles.css';
-			cssNode.media = 'screen';
-			headID.appendChild(cssNode);  
+		$j(function() {    
 		    
 		    var foo = " ";
 		    var bar = " ";
