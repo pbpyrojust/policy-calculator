@@ -94,33 +94,38 @@
 	text-transform: uppercase;
 }
 .grid2cola { width: 100%; }
+@media only screen and (max-width: 600px) {
+	.grid2cola .column { width: 100% !important; }
+}
 .grid2cola .column { width: 50%; display: block; }
 .grid2cola .column:first-of-type { float: left; }
 .grid2cola .column:last-of-type { float: right; }
 .reccOutput { float: left; }
 .maxOutput { float: right; }
+@media only screen and (max-width: 600px) {
+	.reccOutput, .maxOutput { float: none !important;}
+}
 .reccOutput, .maxOutput {
-	padding-top: 12px;
-	padding-right: 20px;
-	padding-bottom: 12px;
-	padding-left: 20px;
+	margin-top: 10px;
 	color: #7f7f7f;
 	font-size: 16pt;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	text-align: center;
-	border: 1px solid #d2d2d2;
 }
-.maxOutpu {
-	padding-right: 39px;
-	padding-left: 39px;
-}
-.reccOutput span, .maxOutput span {
+.reccOutput p, .maxOutput p {
+	margin-top: 5px;
+	padding-top: 12px;
+	padding-right: 40px;
+	padding-bottom: 12px;
+	padding-left: 40px;
+	display: inline-block;
 	color: #e29435;
 	font-size: 24pt;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
-} 
+	border: 1px solid #d2d2d2;
+}
 </style>
         
     </head>
@@ -151,10 +156,10 @@
 				
 			<div class="grid2cola">
 				<div class="column">
-					<p class="reccOutput">Reccomended Policy Amount<br /> <span id="recc">$1,500,000</span></p>
+					<div class="reccOutput">Reccomended Policy Amount<br /> <p id="recc">$1,500,000</p></div>
 				</div>
 				<div class="column">
-					<p class="maxOutput">Maximum Available<br /> <span id="max">$2,000,000</span></p>
+					<div class="maxOutput">Maximum Available<br /> <p id="max">$2,000,000</p></div>
 				</div>
 			</div>
         </div>
