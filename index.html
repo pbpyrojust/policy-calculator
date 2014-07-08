@@ -56,7 +56,7 @@
 } 
 .ui-slider-horizontal .ui-slider-handle {
     top: 1px !important;
-    margin-left: 0 !important;
+    /*margin-left: 0 !important;*/
 }
 .ui-widget-content .ui-state-default:after {
 	position: absolute;
@@ -215,6 +215,7 @@
 		        $j("#amount").val(ui.value);
 		        bar = $j("#amount").val();
 		        console.log('amount'+ bar);
+		        $j("#policyAmount").html(bar).prepend('$');
 		        $j(".points").digits();
 		      }
 		    });
@@ -230,8 +231,7 @@
 
     		    		
 		$j("body , .policyCalculator , #ageRangeSlider , #policySlider").on('load focus blur click mousemove mouseup mousedown keypress keyup' , function() {
-			$j("#policyAmount").html(bar).prepend('$');
-			
+						
 		  var total = +foo + +bar;
 		  console.log( "Handler for .change() called for age range slider" + foo);
 		  console.log( "Handler for .change() called for policy range slider" + bar);
@@ -251,8 +251,9 @@
 		      $j("#ageRange").html('31-40');
 		      var recc = bar * 15;
 		      var max = bar * 20;
-		      $j('#recc').html(recc);
-		      $j('#max').html(max);
+		      $j('#recc').html(recc).prepend('$');
+		      $j('#max').html(max).prepend('$');
+		      $j(".points").digits();
 		      console.log('recommended' + recc);
 		      console.log('maximum' + max);
 		  }
@@ -260,8 +261,9 @@
 		      $j("#ageRange").html('41-50');
 		      var recc = bar * 10;
 		      var max = bar * 15;
-		      $j('#recc').html(recc);
-		      $j('#max').html(max);
+		      $j('#recc').html(recc).prepend('$');
+		      $j('#max').html(max).prepend('$');
+		      $j(".points").digits();
 		      console.log('recommended' + recc);
 		      console.log('maximum' + max);
 		  }
@@ -269,8 +271,9 @@
 		      $j("#ageRange").html('51-60');
 		      var recc = bar * 7;
 		      var max = bar * 10;
-		      $j('#recc').html(recc);
-		      $j('#max').html(max);
+		      $j('#recc').html(recc).prepend('$');
+		      $j('#max').html(max).prepend('$');
+		      $j(".points").digits();
 		      console.log('recommended' + recc);
 		      console.log('maximum' + max);
 		  }
@@ -278,8 +281,9 @@
 		      $j("#ageRange").html('61-65');
 		      var recc = bar * 5;
 		      var max = bar * 7;
-		      $j('#recc').html(recc);
-		      $j('#max').html(max);
+		      $j('#recc').html(recc).prepend('$');
+		      $j('#max').html(max).prepend('$');
+		      $j(".points").digits();
 		      console.log('recommended' + recc);
 		      console.log('maximum' + max);
 		  }
@@ -287,8 +291,9 @@
 		      $j("#ageRange").html('66+');
 		      var recc = bar * 3;
 		      var max = bar * 5;
-		      $j('#recc').html(recc);
-		      $j('#max').html(max);
+		      $j('#recc').html(recc).prepend('$');
+		      $j('#max').html(max).prepend('$');
+		      $j(".points").digits();
 		      console.log('recommended' + recc);
 		      console.log('maximum' + max);
 		  }
