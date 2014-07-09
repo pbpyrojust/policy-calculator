@@ -149,17 +149,17 @@
 				<div id="ageRangeSlider"></div>
 			<p class="amountRangeOutputs">
 				<input type="hidden" id="amount"> <br />
-				<span id="policyAmount" class="points">100000</span> <br />
+				<span id="policyAmount" class="points">20000</span> <br />
 				<label for="amount">Avg. yearly income</label>
 			</p>
 				<div id="policySlider"></div>
 				
 			<div class="grid2cola">
 				<div class="column">
-					<div class="reccOutput">Reccomended Policy Amount<br /> <p id="recc" class="points">1500000</p></div>
+					<div class="reccOutput">Reccomended Policy Amount<br /> <p id="recc" class="points">300000</p></div>
 				</div>
 				<div class="column">
-					<div class="maxOutput">Maximum Available<br /> <p id="max" class="points">2000000</p></div>
+					<div class="maxOutput">Maximum Available<br /> <p id="max" class="points">400000</p></div>
 				</div>
 			</div>
         </div>
@@ -172,22 +172,29 @@
         
 		$j(function() {
 		
+		// Adds CSS file to the head
+		var headID = document.getElementsByTagName("head")[0];         
+		var cssNode = document.createElement('link');
+		cssNode.type = 'text/css';
+		cssNode.rel = 'stylesheet';
+		cssNode.href = '/css/styles.css';
+		cssNode.media = 'screen';
+		headID.appendChild(cssNode);
+		
+		var headIDUi = document.getElementsByTagName("head")[0];         
+		var cssNodeUi = document.createElement('link');
+		cssNodeUi.type = 'text/css';
+		cssNodeUi.rel = 'stylesheet';
+		cssNodeUi.href = '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css';
+		cssNodeUi.media = 'screen';
+		headIDUi.appendChild(cssNodeUi);
+		
 		$j("#policyAmount").prepend('$');
 		$j('#recc').prepend('$');
 		$j('#max').prepend('$');
-			
-			// Adds CSS file to the head
-			var headID = document.getElementsByTagName("head")[0];         
-			var cssNode = document.createElement('link');
-			cssNode.type = 'text/css';
-			cssNode.rel = 'stylesheet';
-			cssNode.href = '/css/styles.css';
-			cssNode.media = 'screen';
-			headID.appendChild(cssNode);
-  
 		    
 		    var foo = 11;
-		    var bar = 100000;
+		    var bar = 20000;
 		       
 		    // Age range function
 		    $j("#ageRangeSlider").slider({
@@ -207,10 +214,10 @@
 		    // Policy amount function
 		    $j("#policySlider").slider({
 		      range: "min",
-		      value: 100000,
-		      min: 100000,
-		      max: 3000000,
-		      step: 50000,
+		      value: 20000,
+		      min: 20000,
+		      max: 500000,
+		      step: 5000,
 		      slide: function(event, ui) {
 		        $j("#amount").val(ui.value);
 		        bar = $j("#amount").val();
