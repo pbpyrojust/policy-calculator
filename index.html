@@ -206,7 +206,6 @@
 		      slide: function(event, ui) {
 		        $j("#yourAgeRange").val(ui.value);
 		        foo = $j("#yourAgeRange").val();
-		        console.log('age range' + foo);
 		      }
 		    });
 		    $j("#yourAgeRange").val($j("#ageRangeSlider").slider("value"));
@@ -221,7 +220,6 @@
 		      slide: function(event, ui) {
 		        $j("#amount").val(ui.value);
 		        bar = $j("#amount").val();
-		        console.log('amount'+ bar);
 		        $j("#policyAmount").html(bar).prepend('$');
 		        $j(".points").digits();
 		      }
@@ -240,9 +238,6 @@
 		$j("body , .policyCalculator , #ageRangeSlider , #policySlider").on('load focus blur click mousemove mouseup mousedown keypress keyup' , function() {
 						
 		  var total = +foo + +bar;
-		  console.log( "Handler for .change() called for age range slider" + foo);
-		  console.log( "Handler for .change() called for policy range slider" + bar);
-		  console.log( "Lets add foo and bar" + total)
 		  
 		  if(foo == 11){ // This is for the 20-30 range
 		  	  $j("#ageRange").html('20-30');
@@ -251,8 +246,6 @@
 		      $j('#recc').html(recc).prepend('$');
 		      $j('#max').html(max).prepend('$');
 		      $j(".points").digits();
-		      console.log('recommended' + recc);
-		      console.log('maximum' + max);
 		  }
 		  if(foo == 22){ // This is for the 31-40 range
 		      $j("#ageRange").html('31-40');
@@ -261,8 +254,6 @@
 		      $j('#recc').html(recc).prepend('$');
 		      $j('#max').html(max).prepend('$');
 		      $j(".points").digits();
-		      console.log('recommended' + recc);
-		      console.log('maximum' + max);
 		  }
 		  if(foo == 33){ // This is for the 41-50 range
 		      $j("#ageRange").html('41-50');
@@ -271,8 +262,6 @@
 		      $j('#recc').html(recc).prepend('$');
 		      $j('#max').html(max).prepend('$');
 		      $j(".points").digits();
-		      console.log('recommended' + recc);
-		      console.log('maximum' + max);
 		  }
 		  if(foo == 44){ // This is for the 51-60 range
 		      $j("#ageRange").html('51-60');
@@ -281,8 +270,6 @@
 		      $j('#recc').html(recc).prepend('$');
 		      $j('#max').html(max).prepend('$');
 		      $j(".points").digits();
-		      console.log('recommended' + recc);
-		      console.log('maximum' + max);
 		  }
 		  if(foo == 55){ // This is for the 61-65 range
 		      $j("#ageRange").html('61-65');
@@ -291,8 +278,6 @@
 		      $j('#recc').html(recc).prepend('$');
 		      $j('#max').html(max).prepend('$');
 		      $j(".points").digits();
-		      console.log('recommended' + recc);
-		      console.log('maximum' + max);
 		  }
 		  if(foo == 66){ // This is for the 66+ range
 		      $j("#ageRange").html('66+');
@@ -301,8 +286,6 @@
 		      $j('#recc').html(recc).prepend('$');
 		      $j('#max').html(max).prepend('$');
 		      $j(".points").digits();
-		      console.log('recommended' + recc);
-		      console.log('maximum' + max);
 		  }
 		    
 		});
