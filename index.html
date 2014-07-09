@@ -18,7 +18,8 @@
 	text-transform: uppercase;
 }
 .policyCalculator h2 { 
-	text-align: center;   
+	text-align: center;
+	text-transform: capitalize;   
 }
 #ageRangeSlider, #policySlider {
     height: 40px;
@@ -172,14 +173,6 @@
         
 		$j(function() {
 		
-		// Adds CSS file to the head
-		var headID = document.getElementsByTagName("head")[0];         
-		var cssNode = document.createElement('link');
-		cssNode.type = 'text/css';
-		cssNode.rel = 'stylesheet';
-		cssNode.href = '/css/styles.css';
-		cssNode.media = 'screen';
-		headID.appendChild(cssNode);
 		
 		var headIDUi = document.getElementsByTagName("head")[0];         
 		var cssNodeUi = document.createElement('link');

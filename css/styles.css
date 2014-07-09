@@ -1,0 +1,114 @@
+.policyCalculator h1 { 
+	text-align: center;
+	text-transform: uppercase;
+}
+.policyCalculator h2 { 
+	text-align: center;
+	text-transform: capitalize;   
+}
+#ageRangeSlider, #policySlider {
+    height: 40px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    -ms-border-radius: 24px;
+    -o-border-radius: 24px;
+    border-radius: 24px;
+}
+.ageRangeOutputs, .amountRangeOutputs {
+    text-align: center;
+}
+.ageRangeOutputs input, .amountRangeOutputs input { 
+	width: 38px;
+	border: 0; 
+}
+.ui-widget-header {
+    background: #e29435 url() top left no-repeat !important;
+    -webkit-border-radius: 24px !important;
+    -moz-border-radius: 24px !important;
+    -ms-border-radius: 24px !important;
+    -o-border-radius: 24px !important;
+    border-radius: 24px !important;
+}
+.ui-widget-content .ui-state-default, .ui-widget-content .ui-state-active {
+		width: 38px !important;
+		height: 38px !important;
+		background: #555 url() top left no-repeat !important;
+		border: 0 !important;
+    	-webkit-border-radius: 24px !important;
+    	-moz-border-radius: 24px !important;
+    	-ms-border-radius: 24px !important;
+    	-o-border-radius: 24px !important;
+    	border-radius: 24px !important;
+} 
+.ui-slider-horizontal .ui-slider-handle {
+    top: 1px !important;
+    /*margin-left: 0 !important;*/
+}
+.ui-widget-content .ui-state-default:after {
+	position: absolute;
+	top: 12px;
+	left: 13px;
+	z-index: 3;
+	width: 12px;
+	height: 12px;
+	background-color: #fff;
+	content: '';
+	-webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+}
+.ui-widget-content {
+    background: #cbcbcb url() top left no-repeat !important;
+    border: 0 !important;
+    -moz-box-shadow:    inset 0 3px 7px -3px #000;
+	-webkit-box-shadow: inset 0 3px 7px -3px #000;
+	box-shadow:         inset 0 3px 7px -3px #000;
+} 
+.policyCalculator span {
+	color: #e29435;
+	font-size: 30px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+.policyCalculator label {
+	color: #808080;
+	font-size: 12pt;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.grid2cola { width: 100%; }
+@media only screen and (max-width: 600px) {
+	.grid2cola .column { width: 100% !important; }
+}
+.grid2cola .column { width: 50%; display: block; }
+.grid2cola .column:first-of-type { float: left; }
+.grid2cola .column:last-of-type { float: right; }
+.reccOutput { float: left; }
+.maxOutput { float: right; }
+@media only screen and (max-width: 600px) {
+	.reccOutput, .maxOutput { float: none !important;}
+}
+.reccOutput, .maxOutput {
+	margin-top: 10px;
+	color: #7f7f7f;
+	font-size: 16pt;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	text-align: center;
+}
+.reccOutput p, .maxOutput p {
+	margin-top: 5px;
+	padding-top: 12px;
+	padding-right: 40px;
+	padding-bottom: 12px;
+	padding-left: 40px;
+	display: inline-block;
+	color: #e29435;
+	font-size: 24pt;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	border: 1px solid #d2d2d2;
+}
