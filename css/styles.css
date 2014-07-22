@@ -1,3 +1,4 @@
+.policyCalculator { max-width: 528px; }
 .policyCalculator h1 { 
 	text-align: center;
 	text-transform: uppercase;
@@ -22,12 +23,15 @@
 	border: 0; 
 }
 .ui-widget-header {
-    background: #e29435 url() top left no-repeat !important;
+    background: #F99538 url() top left no-repeat !important;
     -webkit-border-radius: 24px !important;
     -moz-border-radius: 24px !important;
     -ms-border-radius: 24px !important;
     -o-border-radius: 24px !important;
     border-radius: 24px !important;
+    -moz-box-shadow:    inset 0 3px 7px -3px #000;
+	-webkit-box-shadow: inset 0 3px 7px -3px #000;
+	box-shadow:         inset 0 3px 7px -3px #000;
 }
 .ui-widget-content .ui-state-default, .ui-widget-content .ui-state-active {
 		width: 38px !important;
@@ -67,14 +71,14 @@
 	box-shadow:         inset 0 3px 7px -3px #000;
 } 
 .policyCalculator span {
-	color: #e29435;
+	color: #F99538;
 	font-size: 30px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 }
 .policyCalculator label {
 	color: #808080;
-	font-size: 12pt;
+	font-size: 14px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -94,7 +98,7 @@
 .reccOutput, .maxOutput {
 	margin-top: 10px;
 	color: #7f7f7f;
-	font-size: 16pt;
+	font-size: 16px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	text-align: center;
@@ -106,7 +110,7 @@
 	padding-bottom: 12px;
 	padding-left: 40px;
 	display: inline-block;
-	color: #e29435;
+	color: #F99538;
 	font-size: 24pt;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
