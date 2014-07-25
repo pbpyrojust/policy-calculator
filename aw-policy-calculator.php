@@ -15,18 +15,17 @@ $calculator_markup = '<div class="policyCalculator">
         	<h1>Rule of thumb calculator</h1>
         	<span class="separator small center"></span>       
 	        <p class="ageRangeOutputs">
-				<input type="hidden" id="yourAgeRange"> <br />
-				<span id="ageRange">20-30</span> <br />
+				<input type="hidden" id="yourAgeRange">
+				<span id="ageRange">20-30</span> 
 				<label for="yourAgeRange">Age range</label>
 			</p>
 				<div id="ageRangeSlider"></div>
 			<p class="amountRangeOutputs">
-				<input type="hidden" id="amount"> <br />
-				<span id="policyAmount" class="points">20000</span> <br />
+				<input type="hidden" id="amount">
+				<span id="policyAmount" class="points">20000</span>
 				<label for="amount">Avg. yearly income</label>
 			</p>
 				<div id="policySlider"></div>
-				
 			<div class="grid2cola">
 				<div class="column">
 					<div class="reccOutput">Reccomended Policy Amount<br /> <p id="recc" class="points">300000</p></div>
