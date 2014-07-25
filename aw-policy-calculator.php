@@ -13,10 +13,7 @@ function aw_policy_calculator() {
 $calculator_markup = '<div class="policyCalculator">
         
         	<h1>Rule of thumb calculator</h1>
-        	<span class="separator small center"></span>
-        	
-        	<h2>Use this calculator to discover the right amount of insurance for you.</h2>
-        
+        	<span class="separator small center"></span>       
 	        <p class="ageRangeOutputs">
 				<input type="hidden" id="yourAgeRange"> <br />
 				<span id="ageRange">20-30</span> <br />
