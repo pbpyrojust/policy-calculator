@@ -24,7 +24,7 @@ var $j = jQuery.noConflict();
 		    
 		    var foo = 11;
 		    var bar = 20000;
-		       
+
 		    // Age range function
 		    $j("#ageRangeSlider").slider({
 		      range: "min",
@@ -35,10 +35,16 @@ var $j = jQuery.noConflict();
 		      slide: function(event, ui) {
 		        $j("#yourAgeRange").val(ui.value);
 		        foo = $j("#yourAgeRange").val();
+		      },
+		      change: function(event, ui) {
+		      	var min = $j("#ageRangeSlider").slider("option", "min");
+		        var val = $j("#ageRangeSlider").slider("option", "value");
+		        if(min == val){
+		            $j('.ui-slider-handle').css('left', '5%');
+		        }
 		      }
 		    });
 		    $j("#yourAgeRange").val($j("#ageRangeSlider").slider("value"));
-		    
 		    // Policy amount function
 		    $j("#policySlider").slider({
 		      range: "min",
@@ -51,10 +57,27 @@ var $j = jQuery.noConflict();
 		        bar = $j("#amount").val();
 		        $j("#policyAmount").html(bar).prepend('$');
 		        $j(".points").digits();
+		      },
+		      change: function(event, ui) {
+		      	var min = $j("#policySlider").slider("option", "min");
+		        var val = $j("#policySlider").slider("option", "value");
+		        if(min == val){
+		            $j('.ui-slider-handle').css('left', '5%');
+		        }
 		      }
 		    });
-		    $j("#amount").val($j("#policySlider").slider("value"));
-		    
+		    $j("#amount").val($j("#policySlider").slider("value"));	    
+
+			var styleLeftTwo = $j("#policySlider").slider( "option", "min" );
+			var styleLeftOne = $j("#ageRangeSlider").slider( "option", "min" );
+
+			if(styleLeftOne == 11){
+		    	$j('.ui-slider-handle').css('left', '5%');
+		    }
+		    if(styleLeftTwo == 20000){
+	    		$j('.ui-slider-handle').css('left', '5%');
+	    	}
+
 		    // lets create a comma adding plugin
 		    $j.fn.digits = function(){ 
 				return this.each(function(){ 

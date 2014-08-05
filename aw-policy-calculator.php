@@ -11,9 +11,7 @@ Author URI: http://justwhat.net
 function aw_policy_calculator() {
 
 $calculator_markup = '<div class="policyCalculator">
-        
-        	<h1>Rule of thumb calculator</h1>
-        	<span class="separator small center"></span>       
+  
 	        <p class="ageRangeOutputs">
 				<input type="hidden" id="yourAgeRange">
 				<span id="ageRange">20-30</span> 
@@ -31,13 +29,14 @@ $calculator_markup = '<div class="policyCalculator">
 					<div class="reccOutput">Reccomended Policy Amount<br /> <p id="recc" class="points">300000</p></div>
 				</div>
 				<div class="column">
-					<div class="maxOutput">Maximum Available<br /> <p id="max" class="points">400000</p></div>
+					<div class="maxOutput">Maximum Policy Available<br /> <p id="max" class="points">400000</p></div>
 				</div>
 			</div>
         </div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <script src="/wp-content/plugins/aw-policy-calculator/js/jquery.ui.touch-punch.min.js"></script>
         <script src="/wp-content/plugins/aw-policy-calculator/js/calculator.js?version=1.0"></script>';
  
 return $calculator_markup;
