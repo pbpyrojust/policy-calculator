@@ -59,7 +59,7 @@
 } 
 .ui-slider-horizontal .ui-slider-handle {
     top: 0 !important;
-    margin-left: -26px!important;
+    margin-left: -12.5px !important;
 }
 .ui-widget-content .ui-state-default:after {
 	position: absolute;
