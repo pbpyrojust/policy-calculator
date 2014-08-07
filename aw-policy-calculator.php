@@ -34,7 +34,6 @@ $calculator_markup = '<div class="policyCalculator">
 			</div>
         </div>
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
         <script src="/wp-content/plugins/aw-policy-calculator/js/jquery.ui.touch-punch.min.js"></script>
         <script src="/wp-content/plugins/aw-policy-calculator/js/calculator.js?version=1.0"></script>';
