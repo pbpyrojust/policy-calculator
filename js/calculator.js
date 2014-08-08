@@ -1,6 +1,6 @@
 var $j = jQuery.noConflict();
         
-		$j(function() {
+$j(document).ready(function() {
 		
 		var headIDCalculator = document.getElementsByTagName("head")[0];         
 		var cssNodeCalculator = document.createElement('link');
