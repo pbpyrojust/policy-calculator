@@ -6,7 +6,7 @@ $j(document).ready(function() {
 		var cssNodeCalculator = document.createElement('link');
 		cssNodeCalculator.type = 'text/css';
 		cssNodeCalculator.rel = 'stylesheet';
-		cssNodeCalculator.href = '/wp-content/plugins/aw-policy-calculator/css/styles.css?version=1.0';
+		cssNodeCalculator.href = '/wp-content/plugins/aw-policy-calculator/css/styles.css?version=1.1';
 		cssNodeCalculator.media = 'screen';
 		headIDCalculator.appendChild(cssNodeCalculator);
 		
